@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function tryRemove(arr, index) {
+        if (index >= 0 && index < arr.length) {
+            let result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (i !== index) {
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        } else {
+            return arr;
+        }
+    }
+
+    let originalArray = [1, 2, 3, 4, 5];
+    let modifiedArray = tryRemove(originalArray, 2);
+
+    console.log("Mảng ban đầu: ", originalArray);
+    console.log("Mảng sau khi loại bỏ phần tử ở index 2: ", modifiedArray);
+
+</script>
+</html>

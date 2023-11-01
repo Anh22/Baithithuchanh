@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function findScore(scores) {
+        let highest = -Infinity;
+        let second = -Infinity;
+        let third = -Infinity;
+
+        for (let i = 0; i < scores.length; i++) {
+            let currentScore = scores[i];
+            if (currentScore > highest) {
+                third = second;
+                second = highest;
+                highest = currentScore;
+            } else if (currentScore > second && currentScore < highest) {
+                third = second;
+                second = currentScore;
+            } else if (currentScore > third && currentScore < second) {
+                third = currentScore;
+            }
+        }
+
+        return third;
+    }
+
+    let scores = [85, 90, 75, 95, 80, 70, 60, 100, 65, 90];
+    let thirdHighestScore = findScore(scores);
+    console.log("Điểm thi cao thứ 3 là: " + thirdHighestScore);
+
+</script>
+</html>
